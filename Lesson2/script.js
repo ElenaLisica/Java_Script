@@ -20,12 +20,12 @@ var start,end;
 	do
 	{
 		start=prompt("Введите целое число не меньше единицы - начало интервала");
-	} while (start<1 && (start-Math.trunc(start))>0);
+	} while (start<1 || (start-Math.trunc(start))>0);
 
 	do
 	{
 		end=prompt("Введите целое число - конец интервала");
-	} while (end<1 && (end-Math.trunc(end)>0) && start>=end);
+	} while (end<start || (end-Math.trunc(end))>0);
 
 var i;
 var k=1;
