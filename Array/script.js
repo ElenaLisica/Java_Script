@@ -52,12 +52,33 @@ switch(NumTask){
 	break;
 
 	case '3':
-		var arr = [1, 2, 3, 4];
+		/*var arr = [1, 2, 3, 4];
 		var arrLength = arr.map(function(item) {
 		  return item*item;
 		});
 
-		alert( 'Исходный массив:  '+arr+'\nНовый массив:' + arrLength);
+		alert( 'Исходный массив:  '+arr+'\nНовый массив:' + arrLength);*/
+
+	
+		function SquareOfNumber(n){
+		    return n*n;
+		}
+
+		function map(SquareOfNumber, arr_){
+		    var arr1 = [];
+
+		    for (var i = 0; i < arr_.length; i++){
+		        arr1[i] = SquareOfNumber(arr_[i]);
+		    }
+
+		    return arr1;
+		}
+		var arr = [1, 2, 3, 4];
+		alert('Новый массив:' + map(SquareOfNumber, arr));
+		alert('Исходный массив:  '+arr);
+
+
+
 	 break;
 
 	 default:
