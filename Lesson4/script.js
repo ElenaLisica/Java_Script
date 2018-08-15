@@ -1,4 +1,4 @@
-//first task
+/*//first task
 alert('ЗАДАЧА НА ФУНКЦИЮ  filter');
 
 function isEven(x) {
@@ -18,13 +18,13 @@ function filter(isEven,arr){
 }
 
 var array=[4,7,8,12,4,2,56,7,8];
-alert('Отфильтрованный массив четных чисел '+filter(isEven,array)+ '\n исходный массив  '+array);
+alert('Отфильтрованный массив четных чисел '+filter(isEven,array)+ '\n исходный массив  '+array);*/
 
 //second task
 
 alert('ЗАДАЧА НА НАХОЖДЕНИЕ КОЛИЧЕСТВ СЛОВ В ТЕКСТЕ');
 
-var str='Lorem ipsum dolor sit amet, consectetur adipiscing elit'+
+/*var str='Lorem ipsum dolor sit amet, consectetur adipiscing elit'+
        'sed do eiusmod tempor incididunt ut labore et dolore magna'+
        'aliqua. Ut enim ad minim veniam, quis nostrud exercitation'+
        'ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis'+
@@ -33,12 +33,82 @@ var str='Lorem ipsum dolor sit amet, consectetur adipiscing elit'+
        'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 var arr = [];
 arr = str.split(' ');
-alert('Число слов в тексте '+ arr.length);
+alert('Число слов в тексте '+ arr.length);*/
 
+
+var str = 'Lorem Lorem Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit'+
+       ' sed do eiusmod tempor incididunt ut labore et dolore magna'+
+       ' aliqua. Ut enim ad minim veniam, quis nostrud exercitation'+
+       ' ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis'+
+       ' aute irure dolor in reprehenderit in voluptate velit esse cillum'+
+       ' dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat'+
+       'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+str=str.toLowerCase();
+
+
+// убираю точки
+var i=-2;
+do{
+
+   i = str.search(/[.]/);
+   if (i != -1)
+       str = str.slice(0,i)+str.slice(i+1, 1+str.length);
+
+} while(i != -1);
+
+i = -2;
+
+
+// убираю запятые
+do{
+
+   i = str.search(',');
+   if (i !=- 1)
+       str=str.slice(0,i)+str.slice(i+1, 1+str.length);
+
+} while(i != -1);
+/*alert (str); */
+
+var arr = [];
+var arr1 = [];
+arr = str.split(' ');
+/*alert('Число слов в тексте '+ arr.length);*/
+var j ;
+
+
+//массив неповторных слов
+for (   j = 0; j < arr.length; j++ ){
+
+   if ((arr1.indexOf(arr[j])) == -1)
+       arr1.push(arr[j]);     
+
+}
+
+/*alert (arr1);*/
+
+var count = 0;
+
+
+//поиск на вхожение слова
+str ='';
+for (   j = 0; j < arr1.length; j++ ){
+
+  for (var k = 0 ; k < arr.length; k++  ){
+
+      if (arr[k] == arr1[j])
+       count++;   
+
+  }
+  str += arr1[j] +"  "+ count +'шт'+'\n';
+ /*  alert(arr1[j]+ "   "+count);*/
+  count = 0;
+}
+
+alert (str);
 
 
 //third task
-alert('ЗАДАЧА НА ВЫСОКОСНЫЙ ГОД');
+/*alert('ЗАДАЧА НА ВЫСОКОСНЫЙ ГОД');
 var year = prompt('Введите год');
 
 if ((year % 4) ==0){
@@ -100,4 +170,4 @@ switch (arr.length){
   break;
 
 
-}
+}*/
